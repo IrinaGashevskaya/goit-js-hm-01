@@ -3,12 +3,16 @@ const inputRef = document.querySelector('#validation-input');
 inputRef.addEventListener('blur', onInputChange);
 
 function onInputChange(event) {
-    if(event.target.value.length === 6) {
-    inputRef.classList.remove("invalid");
-    inputRef.classList.add("valid");
+    if(event.target.value.length == event.target.dataset.length) {
+    
+    changeClass("valid","invalid");
+    console.log(event.target.dataset.length);
     
     } else {
-        inputRef.classList.remove("valid");
-        inputRef.classList.add("invalid");    
+        changeClass("invalid","valid"); 
     }
+}
+function changeClass(addClass, removeClass){
+    inputRef.classList.remove(removeClass);
+    inputRef.classList.add(addClass);
 }

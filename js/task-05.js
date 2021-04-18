@@ -10,5 +10,12 @@ function onInputBlur(){
 
 }
 function onInputChange(event) {
-    refs.nameLabel.textContent = event.currentTarget.value;
+    
+    if(event.currentTarget.value.trim()){
+        refs.nameLabel.textContent = event.currentTarget.value;
+    } else {
+        refs.nameLabel.textContent = 'незнакомец';
+    }
+
 }
+
